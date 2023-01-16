@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>MyCalculator</title>
+        <link rel="stylesheet" href="CSS/CSS.css"> 
+        
+    </head>
+    <body>
+        <header> 
+            <h1>MyCalculator</h1>
+        </header>
+        <main>
+            <div id="frame">
+                <div id="screen"></div>
+                <div id="buttons">
+                    <div id="buttons_action">
+                        <div class="button">+
+                            <input value="sum" onclick="getButton(this.value)" type="button">
+                        </div>
+                        <div class="button">-
+                            <input value="min" onclick="getButton(this.value)" type="button">
+                        </div>
+                        <div class="button">*
+                            <input value="mult" onclick="getButton(this.value)" type="button">
+                        </div>
+                        <div class="button">/
+                            <input value="div" onclick="getButton(this.value)" type="button">
+                        </div>
+ <!-- this part is flexsibal go add one mor div % or . knock urself out-->
+                    </div>
+                    <div id="buttons_numbers">
+                        <div class="button"> 1
+                            <input value="1" onclick="getNum(this.value)" type="button">
+                        </div> 
+                        <div class="button">2
+                            <input value="2" onclick="getNum(this.value)" type="button">
+                        </div>
+                        <div class="button">3
+                            <input value="3" onclick="getNum(this.value)" type="button">
+                        </div>
+                        <div class="button">4
+                            <input value="4" onclick="getNum(this.value)" type="button">
+                        </div>
+                        <div class="button">5
+                            <input value="5" onclick="getNum(this.value)" type="button">
+                        </div>
+                        <div class="button">6
+                            <input value="6" onclick="getNum(this.value)" type="button">
+                        </div>
+                        <div class="button">7
+                            <input value="7" onclick="getNum(this.value)" type="button">
+                        </div>
+                        <div class="button">8
+                            <input value="8" onclick="getNum(this.value)" type="button">
+                        </div>
+                        <div class="button">9
+                            <input value="9" onclick="getNum(this.value)" type="button">
+                        </div>    
+                        <div class="button equal">=
+                            <input value="equal" onclick="getButton(this.value)" type="button">
+                        </div>
+                        <div class="button">0
+                            <input value="0" onclick="getNum(this.value)" type="button">
+                        </div>    
+                        <div class="button equal" >=
+                            <input value="equal" onclick="getButton(this.value)" type="button">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+        <footer>
+            <script src="JS/JS.js"></script>
+        </footer>
+    </body>
+</html>
