@@ -26,6 +26,10 @@ function getButton(tap){
             state = 1; 
             console.log(act);
             break;
+        case 'point':  
+            console.log(tap);
+            getNum('.');
+            break;
         case 'equal':
             a = Number(a.join(''));
             console.log(a, typeof(a));
@@ -54,7 +58,7 @@ function getNum(num){
             printOnScreen(b);
             break;
         case 2:
-            clean();
+            clean(); 
             a.push(num);
             console.log(a, typeof(a)); 
             printOnScreen(a);
@@ -72,22 +76,22 @@ function ifEqual(act, a, b){
         case 'sum':
             res = a + b;
             console.log(res);
-            printOnScreen(res);
+            printOnScreen(Number(res.toFixed(4)));
             break;
         case 'min':
             res = a - b;
             console.log(res);
-            printOnScreen(res);
+            printOnScreen(Number(res.toFixed(4)));
             break;
         case 'mult':
             res = a * b;
             console.log(res);
-            printOnScreen(res);
+            printOnScreen(Number(res.toFixed(4)));
             break;
         case 'div':
             res = a / b;
             console.log(res);
-            printOnScreen(res);
+            printOnScreen(Number(res.toFixed(4)));
             break;
         default :
             printOnScreen('Sorry dude NaN Equal');

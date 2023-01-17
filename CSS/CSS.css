@@ -108,13 +108,18 @@ input{
     border-radius: 0 0 0px 20px ; 
     background-color: #7b790c50;
 }
-.equal:last-child{
+.equal:hover {
+    background-color: #88860f60;
+    cursor: pointer;
+}
+.point{
     position: relative;
+    line-height: 49px;
 
     border-radius: 0 0 20px 0px ; 
     background-color: #7b790c50;
 }
-.equal:hover {
+.point:hover {
     background-color: #88860f60;
     cursor: pointer;
-  }
+}
