@@ -161,9 +161,5 @@ function printOnScreen(a){
 }
 
 
-// добавить возможность продолжать считать после  if (tap) a = res;  else clean(); 
-
-
-
 
 
