@@ -101,10 +101,10 @@ input{
 .button:hover {
     background-color: #65630b23;
     cursor: pointer;
-  }
+}
 .equal{
     position: relative;
-
+    
     border-radius: 0 0 0px 20px ; 
     background-color: #7b790c50;
 }
@@ -115,7 +115,7 @@ input{
 .point{
     position: relative;
     line-height: 49px;
-
+    
     border-radius: 0 0 20px 0px ; 
     background-color: #7b790c50;
 }
@@ -123,3 +123,8 @@ input{
     background-color: #88860f60;
     cursor: pointer;
 }
+input:active{
+    background-color: rgba(219, 238, 231, 0.012);
+    border-radius: 45px;
+}
+
