@@ -6,16 +6,35 @@ let act = 0;         // action button value storage
 let queueAct = [];
 const enqueue = (item) => queueAct.push(item);  // add to the end queueAct[]
 let queueCount = 0;
+const board = [];
+
+//board for calculation history
+function boardItem (A, Act, B, Res){
+    let item = new Object();
+    item.a = A;
+    item.b = B;
+    item.res = Res;
+    item.act = (Act == 'sum') ? '+':
+                (Act == 'min') ? '-':
+                (Act == 'mult') ? '*': '/';
+    board.push(item);
+    console.log(board);
+    let div = document.createElement('div');
+    for ( let i = 0 ; i < board.length ; i++ ) {
+        div.innerHTML = `${item.a} ${item.act} ${item.b} = ${item.res}<br>`;
+    }
+    document.getElementById('board').prepend(div);
+}
 
 //action buttons from buttons 
 function getButton(tap){ 
-    if(tap != ('point' && 'equal')){
+    if((tap != 'point') && (tap != 'equal')){
         queueCount++;
-        console.log('queueCount ' + queueCount);
+        console.log('HERE queueCount ' + queueCount);
         enqueue(tap);
         console.log(queueAct);
         console.log('state ' + state);
-        if(state !=0){
+        if((state !=0) && (state !=2) ){
             console.log('here');
 
             act = queueAct[queueCount-2];
@@ -25,13 +44,12 @@ function getButton(tap){
         }
         console.log(act);
     }
-    switch (act) {
+    switch (tap) {
         case 'sum':
         case 'min':
         case 'mult':
         case 'div':
             if(state != 0 ){
-                //act = tap; 
                 equal();
                 continueAfterEqals(); 
                 break;
@@ -93,24 +111,29 @@ function ifEqual(act, a, b){
             console.log(Number(res.toFixed(4)));
             tRes = res;
             printOnScreen(Number(res.toFixed(4)));
+            console.log(a, act, b, res);
+            boardItem (a, act, b, res);
             break;
         case 'min':
             res = (a) - (b);
             console.log(res);
             tRes = res;
             printOnScreen(Number(res.toFixed(4)));
+            boardItem (a, act, b, res);
             break;
         case 'mult':
             res = a * b;
             console.log(res);
             tRes = res;
             printOnScreen(Number(res.toFixed(4)));
+            boardItem (a, act, b, res);
             break;
         case 'div':
             res = a / b;
             console.log(res);
             tRes = res;
             printOnScreen(Number(res.toFixed(4)));
+            boardItem (a, act, b, res);
             break;
         default :
             printOnScreen('Sorry dude NaN Equal');
